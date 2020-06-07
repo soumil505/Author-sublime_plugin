@@ -4,7 +4,7 @@ A plugin for sublime text that improves the plain text typing experiance with be
 ## Installation
 - `cd <Packages directory>`
 - `git clone https://github.com/soumil505/Author-sublime_plugin "Author"`
-
+<!-- end of the list -->
 The Packages directory can be found in sublime text by going **Preferences->Browse Packages**
 
 ## Usage
