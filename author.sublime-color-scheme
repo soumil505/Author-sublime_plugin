@@ -1,0 +1,28 @@
+{
+	"name": "tset colour scheme",
+  "globals":
+    {
+      "background": "black",
+      "foreground": "white",
+      "caret": "#EEEEEE",
+      "selection": "#333333"
+    },
+    "rules":
+      [
+      {
+        "name": "chapter keyword",
+        "scope": "chapter_keyword",
+        "foreground": "#9999CA"
+      },
+      {
+      	"name": "Capitalized word",
+        "scope": "capitalized",
+        "foreground": "#CA8050"
+      },
+      {
+      	"name": "quotes",
+        "scope": "string.quoted.double.author",
+        "font_style": "italic"
+      }
+      ]
+}

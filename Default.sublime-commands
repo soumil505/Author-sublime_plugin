@@ -1,0 +1,57 @@
+[
+{
+    "id": "author",
+    "caption": "author plugin",
+    "command": "author_run"
+},
+{
+    "id": "author",
+    "caption": "Change color scheme",
+    "command": "change_color_scheme"
+},
+{
+    "id": "author",
+    "caption": "fold chapter",
+    "command": "wrap_chapter"
+},
+{
+    "id": "up",
+    "caption": "placeholder for up arrow key",
+    "command": "up_placeholder"
+},
+{
+    "id": "down",
+    "caption": "placeholder for down arrow key",
+    "command": "down_placeholder"
+},
+{
+    "id": "enter",
+    "caption": "placeholder for enter key",
+    "command": "enter_placeholder"
+},
+{
+    "id": "t",
+    "caption": "placeholder for right key",
+    "command": "right_placeholder"
+},
+{
+    "id": "t",
+    "caption": "toggle autocomplete mode (dictionary/wordlist)",
+    "command": "autocomplete_mode_toggle"
+},
+{
+    "id": "definition",
+    "caption": "get definition",
+    "command": "define"
+},
+{
+    "id": "synonym",
+    "caption": "get synonyms",
+    "command": "thesaurus"
+},
+{
+    "id": "suggestions",
+    "caption": "get suggestions",
+    "command": "auto_correct"
+}
+]

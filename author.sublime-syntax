@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - txt
+scope: text.author
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.author
+      push: double_quoted_string
+
+    - match: '^Chapter\b'
+      scope: chapter_keyword
+
+      #Capitalized words
+    - match: '\b[A-Z]+\w*\b'
+      scope: capitalized
+    
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.author
+    - match: '\b[A-Z]+\w*\b'
+      scope: capitalized
+    - match: '"'
+      scope: punctuation.definition.string.end.author
+      pop: true
+
+

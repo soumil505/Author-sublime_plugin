@@ -1,0 +1,8 @@
+[
+	{ "keys": ["up"], "command": "up_placeholder" , "context":[{"key":"popup_visible"}]},
+	{ "keys": ["down"], "command": "down_placeholder" , "context":[{"key":"popup_visible"}]},
+	{ "keys": ["enter"], "command": "enter_placeholder" , "context":[{"key":"popup_visible"}]},
+	{ "keys": ["right"], "command": "right_placeholder" , "context":[{"key":"popup_visible"}]},
+	{ "keys": ["alt+shift+right"], "command": "autocomplete_mode_toggle"},
+	{ "keys": ["alt+shift+left"], "command": "auto_correct"}
+]

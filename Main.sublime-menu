@@ -1,0 +1,22 @@
+[
+{
+	"caption":"author",
+    "id": "sdfg",
+    "children":
+    [
+        
+        {"id": "fold",
+        "caption":"Fold chapter",
+        "command": "wrap_chapter" },
+        {"id": "synonym",
+        "caption":"Get synonyms",
+        "command": "thesaurus" },
+        {"id": "define",
+        "caption":"Get definitions",
+        "command": "define" },
+        {"id": "suggestions",
+        "caption":"Get word suggestions",
+        "command": "auto_correct" }
+    ]
+}
+]
