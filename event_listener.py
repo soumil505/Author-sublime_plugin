@@ -2,11 +2,11 @@ import sublime,sublime_plugin
 import re,os,json
 
 def find_mistakes(view,wordlist):
-	string=view.substr(view.word(sublime.Region(0,1000000)))
+	string=view.substr(view.word(sublime.Region(0,1000000))).lower()
 	words_full=re.split(r"[\"\.,\?!@#$%&\*\(\)~`/\\<>\[\]{}:;\-\+\n\s\b ]",string)
 	# print(words_full)
 	words_full=[w for w in words_full if words_full.count(w)<3 and len(w)!=0 and not re.match(r"[0-9]+$",w)]
-	mistakes=list(set([w for w in words_full if w not in wordlist]))
+	mistakes=list(set([w for w in words_full if len(w)>2 and w not in wordlist]))
 	# print(mistakes)
 	regions=[]
 	for m in mistakes:
@@ -30,7 +30,7 @@ class EventListener(sublime_plugin.ViewEventListener):
 		loc=self.view.sel()[0].begin()
 		string=self.view.substr(self.view.word(sublime.Region(loc-35,loc)))
 		words_full=re.split(r"[\"\.,\?!@#$%&\*\(\)~`/\\<>\[\]{}:;\-\+\n\s\b ]",string)
-		#TODO add some sort of scoring system for relevency
+
 		if len(words_full)>1:
 			words=words_full[1:-1]
 		else:
@@ -56,8 +56,13 @@ class EventListener(sublime_plugin.ViewEventListener):
 			self.use_dict=False
 			wordlist=list(self.wordlist)
 		matches=[w for w in wordlist if w[:len(prefix)]==prefix.lower()]
+		
+		# TODO scoring mechanism here for key better than len
+		matches=sorted(matches,key=len)
 		if prefix[0]==prefix[0].upper():
 			matches=[m[0].upper()+m[1:] for m in matches]
+		if prefix==prefix.upper():
+			matches=[m.upper() for m in matches]
 		# print(prefix,matches,self.wordlist)
 		if len(matches)==0:
 			return

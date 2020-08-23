@@ -133,7 +133,8 @@ class AutoCorrectCommand(sublime_plugin.TextCommand):
 				if c not in b:
 					return False
 			return True
-		matches=[w for w in words if w[0]==string[0] and abs(len(w)-len(string))<=3 and isin(string,w)]
+		matches=[w for w in words if w[0]==string[0] and abs(len(w)-len(string))<=3 and (isin(string,w) or isin(w,string))]
+
 		print(matches)
 		def editDistance(str1, str2, m, n): 
 			if m == 0: 
